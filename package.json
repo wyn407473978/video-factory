@@ -1,0 +1,33 @@
+{
+  "name": "xingge-video-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "星格观察局本地智能短视频制片工具",
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c magenta,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:web": "vite --host 127.0.0.1 --port 5173",
+    "dev:server": "node --watch server/index.mjs",
+    "build": "vite build",
+    "start": "node server/index.mjs",
+    "test": "node --test server/**/*.test.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "read-excel-file": "^6.0.3",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "vite": "^7.1.9"
+  },
+  "allowScripts": {
+    "sharp@0.35.5": true,
+    "esbuild@0.28.2": true,
+    "fsevents": false
+  }
+}
